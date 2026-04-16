@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniFit AI | Next-Gen Fitness</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet@2.2.2"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">OMNIFIT <span>AI</span></div>
+        <div id="ai-status">SYSTEM READY</div>
+    </header>
+
+    <main class="container">
+        <section id="home-page" class="page active">
+            <div class="vision-wrapper">
+                <video id="video" playsinline muted></video>
+                <canvas id="canvas"></canvas>
+                <div class="scan-line"></div>
+            </div>
+            <div class="stats-bar">
+                <div class="stat"><span>REPS</span><h2 id="reps">0</h2></div>
+                <div class="stat"><span>SCORE</span><h2 id="score">--%</h2></div>
+            </div>
+            <button class="btn-action" onclick="startEngine()">START WORKOUT</button>
+        </section>
+
+        <section id="stats-page" class="page">
+            <div class="card">
+                <h3>Your Progress</h3>
+                <p>Calories Burned: <strong id="calories">120 kcal</strong></p>
+                <div class="progress-bar"><div class="fill" style="width: 60%;"></div></div>
+            </div>
+        </section>
+    </main>
+
+    <nav>
+        <div class="nav-item active" onclick="changePage('home-page', this)"><i class="fas fa-home"></i></div>
+        <div class="nav-item" onclick="changePage('stats-page', this)"><i class="fas fa-chart-bar"></i></div>
+        <div class="nav-item"><i class="fas fa-user-circle"></i></div>
+    </nav>
+
+    <script src="script.js"></script> </body>
+</html>
